@@ -314,9 +314,14 @@
 // console.log(false || true && false && true || true || false)
 // 0 + (1 * 0 * 1) + 1 + 0 = 1 = true
 
-============== Задача ===============
-const userAge = 15;
-const money = 10000;
+// ** ============== Задача ===============
+// const userAge = 15;
+// const money = 10000;
 
-console.log(userAge >= 18 || money > 1000); // поверне true, бо поверне правий операнд
-console.log(userAge >= 18 && money > 1000); // поверне false, бо зупиниться на першій брехні
+// console.log(userAge >= 18 || money >= 1000); // поверне true, бо поверне правий операнд
+// console.log(userAge >= 18 && money >= 1000); // поверне false, бо зупиниться на першій брехні
+
+// * Логічне НЕ
+// робить інверсію павда > брехня та брехня > правда
+
+// 10 != 20; // поверне true
