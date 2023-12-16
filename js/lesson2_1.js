@@ -190,15 +190,94 @@
 
 
 
-// ** ============== Задачі ====================
+// ** ============== Задача ====================
 
-//  Напиши скрипт для відображення годин та хвилин у консолі браузера у вигляді
+//  *Напиши скрипт для відображення годин та хвилин у консолі браузера у вигляді
 //  рядка формату "14 г. 26 хв.". Якщо значення змінної minutes дорівнює 0,
 //  то виводь рядок "14 г.", без хвилин.
 
+// *це перший варіант коду:
+// const hours = 14;
+// const minutes = 26;
+// let timeString;
 
-const minutes = 
-if (minutes === 0) {
-    console.log('14 г');
-} else
+// if (minutes === 0) {
+//     timeString = `${hours} г.`;
+// } else {
+//     timeString = `${hours} г. ${minutes}`;
+// }
+// console.log(timeString);
 
+// ==========================
+
+// * це другий варіант, так, як години в нас використовуються в обох умав,
+// * то код можна скоротити, задавши змінній timeString значення за замовчуванням
+// * і в умові if поставити заперечення.
+
+// const hours = 14;
+// const minutes = 26;
+// let timeString = `${hours} г.`;
+
+// if (minutes !== 0) {
+//     timeString = `${hours} г. ${minutes} хв.`;
+// }
+
+// console.log(timeString);
+
+// ================================
+
+// * та сама задача, але із застосуванням функції
+
+// function getTime(hours, minutes) {
+//     let timeString = `${hours} г.`;
+
+//     if (minutes !== 0) {
+//         timeString = `${hours} г. ${minutes} хв.`;
+//     }
+//     return timeString;
+// }
+// console.log(getTime(14, 26));
+
+// ==========================================================================
+
+
+// ** ================= Задача =================
+
+// * Напиши скрипт для відображення часу дедлайну здачі проекту. Використовуй if...else.
+
+//  * Якщо до дедлайну 0 днів - виведи рядок "Today"
+//  * Якщо до дедлайну 1 день - виведи рядок "Tomorrow"
+//  * Якщо до дедлайну 2 дні - виведи рядок "Overmorrow"
+//  * Якщо до дедлайну 3+ днів - виведи рядок "Date in the future"
+
+
+// const daysUntilDeadline = 5;
+// if (daysUntilDeadline === 0) {
+//     console.log('Today');
+// } else if (daysUntilDeadline === 1) {
+//     console.log('Tomorrow');
+// } else if (daysUntilDeadline === 2) {
+//     console.log('Overmorrow');
+// } else {
+//     console.log('Date in the future');
+// }
+
+// ===============================================
+
+
+
+// *** switch - викорисотвується тоді, коли потрібно порівняти одну змінну з різними наченнями
+
+// * Та сама задача, але з використаням switch
+// в круглих дужках switch передаємо змінну, яку будемо порівнювати
+// в тілі switch передаємо з чим будемо порівнювати
+// читається так: якщо дорівнює ), то зроби console.log('Today');
+// обовязково ставимо вкінці break, щоб вийти з умови
+
+// const daysUntilDeadline = 5;
+// switch(daysUntilDeadline) {
+//     case 0: console.log('Today'); break;
+//     case 1: console.log('Tomorrow'); break;
+//     case 2: console.log('Overmorrow'); break;
+//     default: console.log('Date in the future');
+// }
