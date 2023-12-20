@@ -319,12 +319,35 @@
 
 // * вирішення з використанням функції
 
-function foo1(sub) {
-    if (sub === 'free') {
-    return ' - ';
-} else {
-    return ' + ';
-}
-}
-foo1('vip');
+// function foo1(sub) {
+//     if (sub === 'free') {
+//     return '-';
+// } else {
+//     return '+';
+// }
+// }
+// console.log(foo1('vip'));
 
+// * з використанням тернарного оператора
+// function foo1(sub) {
+//     return sub === 'free' ? '-' : '+'
+// }
+
+// console.log(foo1('free'));
+
+// * Функція calculateTotal(number) приймає ціле число (параметр number). 
+// Доповни код функції так, щоб вона повертала суму всіх цілих чисел від одиниці до цього числа включно.
+// Наприклад, якщо number дорівнює 3, то сума - це 1 + 2 + 3, тобто 6. * /
+
+// let end = 100;
+// let total = 0;
+
+// while (end >= 1) {
+//     total += end;
+//     end -= 1;
+// }
+// console.log(total);
+
+// створюємо змінну end - з якимось початковим числом
+// створюємо змінну total - яка буде рахувтаи
+// while - поки змінна end >= 1
