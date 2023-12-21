@@ -48,7 +48,6 @@
 // const arr = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
 // arr[10] = 'Good';
 // console.log(arr)
-
 // const myLenght = arr.length;
 // console.log(myLenght);
 
@@ -63,7 +62,6 @@
 
 // *** 2. join метод - об'єднує елементи в суцільний рядок
 // ** в дужках вказується роздільник
-
 // const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
 // const result = courses.join('-')
 // console.log(result);
