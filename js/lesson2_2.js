@@ -1,14 +1,14 @@
-//     * 1. slice метод
-//     * 2. startWidtg / endsWidth метод
-//     * 3. indexOf / lastIndexOf метод
-//     * 4. trim метод
-//     * 5. replace / replaceAll метод
-//     **** Методи можна писати ланцюгом, але треба ливтись, що повертає попередній метод
-//     * 6. for цикл
-//     * 7. while цикл
-//     * 8. do while цикл
-//     * 9. break
-//     * 10. continue
+// *         1. slice метод
+// *         2. startWidtg / endsWidth метод
+// *         3. indexOf / lastIndexOf метод
+// *         4. trim метод
+// *         5. replace / replaceAll метод
+// *    **** Методи можна писати ланцюгом, але треба ливтись, що повертає попередній метод
+// *         6. for цикл
+// *         7. while цикл
+// *         8. do while цикл
+// *         9. break
+// *         10. continue
 
 
 
