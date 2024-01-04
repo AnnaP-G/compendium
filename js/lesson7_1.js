@@ -9,7 +9,18 @@
 //        * getElememtsByNyme
 //        * getElementsByClassName
 //        * getElementsByTagName
-// *** 6. 
+// *** 6. Властивості навігації по DOM-вузлах
+// *** 7. Властивості елемента
+//        * textContent
+//        * value
+// *** 8. Атрибути
+//      * getAttribute
+//      * setAttribute
+//      * removeAttribute
+//      * hasAttribute
+// *** 9. Data-атрибути
+//        * dataset
+
 
 
 
@@ -134,3 +145,101 @@
 // console.log(idElem);
 
 
+
+
+// *** 6. Властивості навігації по DOM-вузлах
+// ** parentElement - звернення до батька
+// ** firstElementChild - звернення до першої дитини (перший елемент)
+//    firstChild - звернення до першої дитини (текстовий вузол)
+// ** lastElementChild - звернення до останньої дитини (останній елемент)
+//    lastChild - звернення до останньої дитини (текстовий вузол)
+// ** children - виведе псевдомасив li
+// ** nextElementSibling - правий сусід
+//    nextSibling - правий сусід (текстовий вузол)
+// ** previousElementSibling - лівий сусід
+// ** previousSibling - лівий сусід (текстовий вузол)
+
+
+// в ul:
+// батько - body
+// h1 - лівий сусід
+// input- правий сусід
+// діти - li
+
+// const ulElem = document.querySelector('#categories');
+// console.log(ulElem.parentElement); // виведе body
+
+// console.log(ulElem.firstElementChild); // виведе першу li
+// console.log(ulElem.firstChild); // виведе #text (текстовий вузол - пробіли, перенесення рядка)
+
+
+// console.log(ulElem.lastElementChild); // виведе першу li
+// console.log(ulElem.lastChild); // виведе #text (текстовий вузол - пробіли, перенесення рядка)
+
+// console.log(ulElem.children[2]); // виведе псевдомасив li (без текстових вузлів)
+
+// console.log(ulElem.nextElementSibling); // виведе input, правого сусіда
+// console.log(ulElem.nextSibling); // виведе  #text (правий текстовий вузол)
+
+// console.log(ulElem.previousElementSibling); // виведе h1
+// console.log(ulElem.previousSibling); // виведе #text
+
+
+
+// *** 7. Властивості елемента
+// const imgElem = document.querySelector('.img-wood');
+// console.log(imgElem.src); // так звертатись до властивості об'єкта погано
+// imgElem.src = '#'; // так зінювати властивість погано
+// console.log(imgElem.src);
+
+// ** textContent
+// const heroTitleElem = document.querySelector('.hero')
+// heroTitleElem.textContent = 'New Header';
+
+// ** value
+// const inputElem = document.querySelector('.js-test');
+// inputElem.value = 'hello';
+
+
+
+
+// *** 8. Атрибути
+/*
+ * - get(ім'я-атрибута) // отримати значення атребута
+ * - set(ім'я-атрибута) // змінити/додати значення атребута
+ * - remove(ім'я-атрибута) // видалення трибута
+ * - has(ім'я-атрибута) // перевірити чи наявний атрибут
+*/
+
+// ** getAttribute
+// const imgEl = document.querySelector('.img-wood')
+// console.log(imgEl.getAttribute('src'));
+// console.log(imgEl.getAttribute('class'));
+// console.log(imgEl.getAttribute('width'));
+// console.log(imgEl.getAttribute('hello')); // виведе null
+
+// ** setAttribute
+// imgEl.setAttribute('src', '#'); // змінить/ додасть атрибут
+
+// ** removeAttribute
+// imgEl.setAttribute('hello', 'hello world');
+// imgEl.removeAttribute('hello world');
+
+// ** hasAttribute
+// const butEl = document.querySelector('.js-btn1')
+// console.log(butEl.hasAttribute('disabled')); // виведе true
+
+
+
+
+// *** 9. Data-атрибути
+// ** dataset // об'єкт в якому зберігаються створені атрибути
+// ** Якщо це власний атрибут, вигаданий, який не існує в HTML, має починатись з data
+const actions = document.querySelectorAll('button');
+const firstBtnEl = actions[0];
+// console.log(firstBtnEl.getAttribute('data-action')); // перший варіант отримати значення атрибута
+// console.log(firstBtnEl.dataset); // другий варіант, виведе об'єкт атрибутів
+console.log(firstBtnEl.dataset.action);
+console.log(firstBtnEl.dataset.id);
+console.log(firstBtnEl.dataset.style);
+console.log(firstBtnEl.dataset.type);
