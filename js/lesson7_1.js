@@ -1,30 +1,38 @@
-// *** 1. BOM
-// *** 2. DOM
-// *** 3. Document
-// *** 4. Типи елементів в DOM дереві
-// *** 5. Пошук елементів в DOM дереві
-//        * querySelector
-//        * querySelectorAll
-//        * getElementById
-//        * getElememtsByNyme
-//        * getElementsByClassName
-//        * getElementsByTagName
-// *** 6. Властивості навігації по DOM-вузлах
-// *** 7. Властивості елемента
-//        * textContent
-//        * value
-// *** 8. Атрибути
-//      * getAttribute
-//      * setAttribute
-//      * removeAttribute
-//      * hasAttribute
-// *** 9. Data-атрибути
-//        * dataset
+// *     1. BOM
+// *     2. DOM
+// *     3. Document
+// *     4. Типи елементів в DOM дереві
+// *     5. Пошук елементів в DOM дереві
+//          * querySelector
+//          * querySelectorAll
+//          * getElementById
+//          * getElememtsByNyme
+//          * getElementsByClassName
+//          * getElementsByTagName
+// *     6. Властивості навігації по DOM-вузлах
+// *     7. Властивості елемента
+//          * textContent
+//          * value
+// *     8. Атрибути
+//          * getAttribute
+//          * setAttribute
+//          * removeAttribute
+//          * hasAttribute
+// *     9. Data-атрибути
+//          * dataset
+// *     10. classList
+//          * add
+//          * remove
+//          * toggle
+//          * replace
+//          * contains
+// *     11. Style інлайн стилі
+// *     12. Створення розмітки
+//          * createElement
 
 
 
-
-// *** 1. BOM - Browser Object Model - window
+// *     1. BOM - Browser Object Model - window
 
 // ** Методи браузера:
 // window.alert();
@@ -34,7 +42,7 @@
 
 
 
-// *** 2. DOM - Document Object Model -
+// *     2. DOM - Document Object Model -
 // * це об'єктне представлення нашої HTML структури
 
 // * html parser вбудований посередник в браузері,
@@ -43,7 +51,7 @@
 
 
 
-// *** 3. Document - це об'єкт у вигляді дерева. Його створює парсер
+// *     3. Document - це об'єкт у вигляді дерева. Його створює парсер
 
 // ** Структура дерева, яка будується html парсером:
 // const document = {
@@ -72,7 +80,7 @@
 
 
 
-// *** 4. Типи елементів в DOM дереві:
+// *     4. Типи елементів в DOM дереві:
 
 // ** Вузли-елементи (element node) - утворюються тегами,
 // зазвичай одні елементи вкладені в інші.
@@ -90,7 +98,7 @@
 
 
 
-// *** 5. Пошук елементів в DOM дереві
+// *     5. Пошук елементів в DOM дереві
 // ** З пошуку починаємо писати код
 // ** Шукаємо в document
 // ** Якщо шукаємо неіснуючий елемент, то запишеться null
@@ -147,7 +155,7 @@
 
 
 
-// *** 6. Властивості навігації по DOM-вузлах
+// *     6. Властивості навігації по DOM-вузлах
 // ** parentElement - звернення до батька
 // ** firstElementChild - звернення до першої дитини (перший елемент)
 //    firstChild - звернення до першої дитини (текстовий вузол)
@@ -186,7 +194,7 @@
 
 
 
-// *** 7. Властивості елемента
+// *     7. Властивості елемента
 // const imgElem = document.querySelector('.img-wood');
 // console.log(imgElem.src); // так звертатись до властивості об'єкта погано
 // imgElem.src = '#'; // так зінювати властивість погано
@@ -203,7 +211,7 @@
 
 
 
-// *** 8. Атрибути
+// *     8. Атрибути
 /*
  * - get(ім'я-атрибута) // отримати значення атребута
  * - set(ім'я-атрибута) // змінити/додати значення атребута
@@ -232,14 +240,67 @@
 
 
 
-// *** 9. Data-атрибути
+// *     9. Data-атрибути
 // ** dataset // об'єкт в якому зберігаються створені атрибути
 // ** Якщо це власний атрибут, вигаданий, який не існує в HTML, має починатись з data
-const actions = document.querySelectorAll('button');
-const firstBtnEl = actions[0];
+// const actions = document.querySelectorAll('button');
+// const firstBtnEl = actions[0];
 // console.log(firstBtnEl.getAttribute('data-action')); // перший варіант отримати значення атрибута
 // console.log(firstBtnEl.dataset); // другий варіант, виведе об'єкт атрибутів
-console.log(firstBtnEl.dataset.action);
-console.log(firstBtnEl.dataset.id);
-console.log(firstBtnEl.dataset.style);
-console.log(firstBtnEl.dataset.type);
+// console.log(firstBtnEl.dataset.action);
+// console.log(firstBtnEl.dataset.id);
+// console.log(firstBtnEl.dataset.style);
+// console.log(firstBtnEl.dataset.type);
+
+
+
+
+// *     10. classList
+//          * add - додає клас
+//          * remove - видаляє клас
+//          * toggle - перемикач
+//          * replace - замінює один клас на інший
+//          * contains -  перевірить клас на наявність
+
+// * add
+// const liElem = document.querySelector('.item');
+// liElem.classList.add('link-curent', 'text-decor'); // лішка стала фіолетовою і підкресленою, бо в css прописаний такі стилі до класу link-curent і text-decoration
+// console.log(liElem);
+
+// * remove
+// liElem.classList.remove('text-decor'); // видалила клас, лішка перестала бути підкресленою
+
+// * toggle
+// setInterval(() => {
+//     liElem.classList.toggle('text-decor'); // кожну секунду буде підкреслення вмикатись і вимикатись
+// }, 1000);
+
+// * replace
+// liElem.classList.add('test');
+// liElem.classList.replace('test', 'test1') // замінить на test1
+
+// * contains
+// console.log(liElem.classList.contains('test3')); // виведе false
+
+
+
+
+// *     11. Style інлайн стилі
+// const heroTitleElem = document.querySelector('.hero');
+// heroTitleElem.style.fontSize = '80px';
+// heroTitleElem.style.color = 'green';
+
+
+// *     12. Створення розмітки
+// * createElement
+// const myElem = document.createElement('h1'); // створить <h1></h1>
+// myElem.textContent = 'Hello Wood'; // додасть текст заголовку
+// console.log(myElem);
+
+const arr = [];
+for (let i = 0; 1 < 9; i++) {
+    const myElem = document.createElement('h1'); 
+    myElem.textContent = 'Hello Wood'; 
+    arr.push(myElem);
+}
+console.log(arr);

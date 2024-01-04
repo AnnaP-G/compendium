@@ -1,0 +1,13 @@
+.hero {
+    font-size: 60px;
+    color: red;
+    font-weight: 700;
+}
+
+.link-curent {
+    color: blueviolet;
+}
+
+.text-decor {
+    text-decoration-line: underline;
+}

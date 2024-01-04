@@ -191,13 +191,13 @@
 
 
 // *** 10. Ітерація по масиву (перебирання)
-// * виклом for
+// * циклом for
 // const arr = [1, 4, 67, 7, 5, 4, 3, 2];
 // for (let i = 0; i <= 7; i++) {
 //     console.log(arr[i]);
 // }
 
-// * виклом for of
+// * циклом for of
 // const arr = [1, 4, 67, 7, 5, 4, 3, 2];
 // for (let elem of arr) {
 //     console.log(elem);
