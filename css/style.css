@@ -11,3 +11,23 @@
 .text-decor {
     text-decoration-line: underline;
 }
+
+.color-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid black;
+    width: 100px;
+}
+.box {
+    width: 100px;
+    height: 100px;
+}
+
+.color-picker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}

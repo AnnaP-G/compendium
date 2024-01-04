@@ -29,6 +29,9 @@
 // *     11. Style інлайн стилі
 // *     12. Створення розмітки
 //          * createElement
+//          * append
+//          * prepend
+
 
 
 
@@ -291,16 +294,113 @@
 // heroTitleElem.style.color = 'green';
 
 
+
+
+
 // *     12. Створення розмітки
 // * createElement
+// * append - додає елемент в кінець (наприклад в div додасть після 5 заголовків)
+// * prepend - додає елемент на початок
 // const myElem = document.createElement('h1'); // створить <h1></h1>
 // myElem.textContent = 'Hello Wood'; // додасть текст заголовку
 // console.log(myElem);
+// ==================================
 
-const arr = [];
-for (let i = 0; 1 < 9; i++) {
-    const myElem = document.createElement('h1'); 
-    myElem.textContent = 'Hello Wood'; 
-    arr.push(myElem);
+// * створили 10 h1 зі стилями і додали їх в масив
+// const arr = [];
+// for (let i = 0; i < 10; i++) {
+//     const myElem = document.createElement('h1');
+//     myElem.textContent = 'Hello Wood';
+//     myElem.classList.add('bold');
+//     myElem.style.color = 'tomato';
+//     arr.push(myElem);
+// }
+// * console.log(arr); //
+// ==================================
+
+// * створили h1 зі стилями і додали його в розмітку
+// const myElem = document.createElement('h1');
+// myElem.textContent = 'Hello Wood';
+// myElem.classList.add('bold');
+// myElem.style.color = 'blue';
+// myElem.style.textDecorationLine = 'underline';
+// const boxElem = document.querySelector('.js-box-hero');
+// console.log(boxElem);
+// boxElem.append(myElem);
+// ==================================
+
+// * створили циклом 5 h1 зі стилими і додали їх в розмітку
+// const arr = [];
+// for (let i = 0; i < 5; i++) {
+//     const myElem = document.createElement('h1');
+//     myElem.textContent = 'Hello Wood';
+//     myElem.classList.add('bold');
+//     myElem.style.color = 'blue';
+//     myElem.style.textDecorationLine = 'underline';
+//     arr.push(myElem);
+// }
+// console.log(arr);
+
+// const boxElem = document.querySelector('.js-box-hero');
+// boxElem.append(...arr); // метод spred висипав всі елементи масиву в розмітку, можна було передавати їх всі через кому
+
+// * створили картинку  зі стилями і додали її в розмітку
+// const boxElem = document.querySelector('.js-box-hero');
+// const imageEl = document.createElement('img');
+// imageEl.setAttribute(
+//     'src',
+//     './img/460f7ca4255426bff51e887ff99fa654.jpeg',
+// )
+// imageEl.style.width = '300px';
+// imageEl.style.height = '200px';
+// boxElem.append(imageEl);
+// ==================================
+
+// * перетворюємо масив картинок на масив елементів
+// 1. методом map перетворили масив на масив елементів
+// 2. в змінну elem записли виконання функції, тобто img
+// 3. додали атрибути setAttribute
+// 4. return повернули елементи elem
+// 5. вивели в консоль result
+// 6. додали в розмітку всі елементи
+// const images = [
+//     'https://cdn.pixabay.com/photo/2018/07/26/07/45/valais-3562988_1280.jpg',
+//     'https://cdn.pixabay.com/photo/2018/07/26/07/45/valais-3562988_1280.jpg',
+//     'https://cdn.pixabay.com/photo/2018/07/26/07/45/valais-3562988_1280.jpg',
+//     'https://cdn.pixabay.com/photo/2018/07/26/07/45/valais-3562988_1280.jpg',
+//     'https://cdn.pixabay.com/photo/2018/07/26/07/45/valais-3562988_1280.jpg',
+//     'https://cdn.pixabay.com/photo/2018/07/26/07/45/valais-3562988_1280.jpg',
+//     'https://cdn.pixabay.com/photo/2018/07/26/07/45/valais-3562988_1280.jpg',
+//     'https://cdn.pixabay.com/photo/2018/07/26/07/45/valais-3562988_1280.jpg',
+// ]
+// const result = images.map((url) => {
+//     const elem = document.createElement('img');
+//     elem.setAttribute('src', url);
+//     return elem;
+// });
+// console.log(result);
+// boxElem.append(...result);
+// ======================================
+
+// * Створення колекції елементів
+const options = [
+    { label: 'червоний', color: '#F44336' },
+    { label: 'зелений', color: '#4CAF50' },
+    { label: 'синій', color: '#2196F3' },
+    { label: 'сірий', color: '#607D8B' },
+    { label: 'рожевий', color: '#E91E63' },
+    { label: 'індіго', color: '#3F51B5' },
+]   
+
+
+function colorTemplate(obj) {
+    const label = obj.label;
+    const color = obj.color;
+
+    return `<div class="color-card">
+            <div class="box" style="background-color: ${color}"></div>
+            <p>${label}</p>
+        </div>`;
 }
-console.log(arr);
+const result = colorTemplate({ label: 'hello', color: 'blue' });
+console.log(result);
