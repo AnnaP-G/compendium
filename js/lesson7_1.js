@@ -31,6 +31,8 @@
 //          * createElement
 //          * append
 //          * prepend
+//          * innerHTML
+//          * insertAdjacentHTML
 
 
 
@@ -298,7 +300,7 @@
 
 
 // *     12. Створення розмітки
-// * createElement
+// * createElement (з ним працюють методи append і prepend)
 // * append - додає елемент в кінець (наприклад в div додасть після 5 заголовків)
 // * prepend - додає елемент на початок
 // const myElem = document.createElement('h1'); // створить <h1></h1>
@@ -383,24 +385,72 @@
 // ======================================
 
 // * Створення колекції елементів
-const options = [
-    { label: 'червоний', color: '#F44336' },
-    { label: 'зелений', color: '#4CAF50' },
-    { label: 'синій', color: '#2196F3' },
-    { label: 'сірий', color: '#607D8B' },
-    { label: 'рожевий', color: '#E91E63' },
-    { label: 'індіго', color: '#3F51B5' },
-]   
+// * innerHTML // додає саме розмітку (на відміну від append (він додає елемент)), видаляючи попередню і на її місце вставляє свою, але на html розмітку не впливає
+// // * insertAdjacentHTML('куди вставити', розмітка) //
+// const options = [
+//     { label: 'червоний', color: '#F44336' },
+//     { label: 'зелений', color: '#4CAF50' },
+//     { label: 'синій', color: '#2196F3' },
+//     { label: 'сірий', color: '#607D8B' },
+//     { label: 'рожевий', color: '#E91E63' },
+//     { label: 'індіго', color: '#3F51B5' },
+//     { label: 'червоний', color: '#F44336' },
+//     { label: 'зелений', color: '#4CAF50' },
+//     { label: 'синій', color: '#2196F3' },
+//     { label: 'сірий', color: '#607D8B' },
+//     { label: 'рожевий', color: '#E91E63' },
+//     { label: 'індіго', color: '#3F51B5' },
+// ]
+
+// for (let color of options) {
+//     const markup = colorTemplate(color);
+//     console.log(markup);
+// }
+// const colorPickerContainerEl = document.querySelector('.js-color-picker')
+// const markup = options.map(colorTemplate).join('\n\n');
+
+// colorPickerContainerEl.innerHTML = markup; // додали розмітку
+// colorPickerContainerEl.insertAdjacentHTML('afterbegin', markup); // вставляє розмітку туди куди вкажемо
 
 
-function colorTemplate(obj) {
-    const label = obj.label;
-    const color = obj.color;
+// function colorTemplate(obj) {
+//     const label = obj.label;
+//     const color = obj.color;
 
-    return `<div class="color-card">
-            <div class="box" style="background-color: ${color}"></div>
-            <p>${label}</p>
-        </div>`;
-}
-const result = colorTemplate({ label: 'hello', color: 'blue' });
-console.log(result);
+//     return `<div class="color-card">
+//             <div class="box" style="background-color: ${color}"></div>
+//             <p>${label}</p>
+//         </div>`;
+// }
+// const result = colorTemplate({ label: 'hello', color: 'blue' });
+// console.log(result);
+// =========================================
+
+// *** що треба для цієї задачі
+// - створити шаблон розмітки в html
+// - створити стилі
+// - елемент куди виводити
+// - масив з даними
+// - функція, яка створює ромітку для одного друга
+// - функція, яка створює ромітку для багатьох друзів і виводить її
+// - виклик функції
+
+// const friendListElem = document.querySelector('.js-list');
+// const friends = ['Vlad', 'Artem', 'Max', 'Dima', 'Lika'];
+
+// //* функція, яка створює ромітку для одного друга
+// function friendTemplate(friend) {
+//     return `<li class="friend-item">${friend}</li>`;
+// }
+
+// //* функція, яка створює ромітку для багатьох друзів
+// function renderFriends() {
+//     const markup = friends.map(friendTemplate).join('');
+//     friendListElem.insertAdjacentHTML('beforeend', markup)
+// }
+// renderFriends();
+
+
+
+
+

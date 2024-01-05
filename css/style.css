@@ -25,9 +25,20 @@
     height: 100px;
 }
 
-.color-picker {
+.js-color-picker {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 10px;
+}
+
+.friend-item {
+    list-style: none;
+    border: 1px solid black;
+    padding: 3px;
+    margin: 2px;
+    width: fit-content;
+    min-width: 200px;
+    background-color: plum;
+    border-radius: 5px;
 }
