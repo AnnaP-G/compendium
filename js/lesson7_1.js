@@ -202,7 +202,7 @@
 // *     7. Властивості елемента
 // const imgElem = document.querySelector('.img-wood');
 // console.log(imgElem.src); // так звертатись до властивості об'єкта погано
-// imgElem.src = '#'; // так зінювати властивість погано
+// imgElem.src = '#'; // так змінювати властивість погано
 // console.log(imgElem.src);
 
 // ** textContent
@@ -386,7 +386,7 @@
 
 // * Створення колекції елементів
 // * innerHTML // додає саме розмітку (на відміну від append (він додає елемент)), видаляючи попередню і на її місце вставляє свою, але на html розмітку не впливає
-// // * insertAdjacentHTML('куди вставити', розмітка) //
+//  * insertAdjacentHTML('куди вставити', розмітка) //
 // const options = [
 //     { label: 'червоний', color: '#F44336' },
 //     { label: 'зелений', color: '#4CAF50' },
@@ -443,14 +443,12 @@
 //     return `<li class="friend-item">${friend}</li>`;
 // }
 
-// //* функція, яка створює ромітку для багатьох друзів
+// //* функція, яка створює розмітку для багатьох друзів
 // function renderFriends() {
 //     const markup = friends.map(friendTemplate).join('');
 //     friendListElem.insertAdjacentHTML('beforeend', markup)
 // }
 // renderFriends();
 
-
-
-
+// Задача: Перетворити масив чисел на масив, в якому кожне число буде піднесене до квадрату.
 
