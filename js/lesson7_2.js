@@ -11,5 +11,7 @@
 // Натискаючи на кнопку "Click me" змусь
 // червоний квадратик зміщуватись на 50px по діагоналі
 
-const clickMe = document.querySelector('.js-click');
-clickMe.addEventListener('click');
+// const clickMe = document.querySelector('.js-click');
+// clickMe.addEventListener('click');
+
+
