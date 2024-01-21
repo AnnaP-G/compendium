@@ -98,7 +98,7 @@
 
 // * - метод parseFloat()
 // const y = Number.parseFloat('25.99');
-// console.log(y); // вивеже 25.99;
+// console.log(y); // виведе 25.99;
 
 
 // * - метод toFixed()
